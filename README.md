@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой простое приложение для управления задачами (Todo List), которое позволяет пользователям эффективно управлять своими делами. Вы можете добавлять, отмечать как выполненные, удалять и фильтровать задачи. Также в приложении реализована уникальная система "звезд", которая отслеживает вашу продуктивность на основе сложности выполненных задач.
 
-Currently, two official plugins are available:
+# Основные функции
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Добавление задач**
+   - Вводите описание задачи.
+   - Указывайте уровень сложности (от 1 до 10).
+   - Устанавливайте дату выполнения.
+   - Нажимайте кнопку "Add Todo" для сохранения задачи.
 
-## Expanding the ESLint configuration
+2. **Управление задачами**
+   - **Отметка выполнения**: Нажмите на чекбокс рядом с задачей, чтобы отметить её как выполненную или невыполненную.
+   - **Удаление задачи**: Нажмите кнопку "Delete", чтобы удалить задачу.
+   - **Очистка выполненных задач**: Используйте кнопку "Delete All Completed Todos", чтобы удалить все выполненные задачи.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. **Фильтрация задач**
+   - Просматривайте все задачи, активные или выполненные, используя разделы "All", "Active" и "Completed".
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+4. **Система "звезд"**
+   - За каждую выполненную задачу вы получаете звезды, равные её сложности.
+   - Если задача помечена как невыполненная после завершения, соответствующие звезды вычитаются.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Технологии
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React**: Библиотека для создания пользовательского интерфейса.
+- **Redux Toolkit**: Управление состоянием приложения (добавление, изменение и удаление задач).
+- **TypeScript**: Добавляет статическую типизацию для повышения надежности кода.
+- **CSS**: Стилизация компонентов.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+# Как запустить?
+
+1. **Клонируйте репозиторий**
+   ```bash
+   git clone https://github.com/your-username/todo-app.git
+   cd todo-app
+   npm install
+   npm start
+   ```
